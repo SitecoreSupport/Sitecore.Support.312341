@@ -24,7 +24,7 @@ namespace Sitecore.Support.EmailCampaign.Cm.Pipelines.SendEmail
       var ecmMessage = args.EcmMessage as HtmlMailBase;
       if (ecmMessage != null)
       {
-        return new HtmlMailFiller(ecmMessage, args, _logger, _cipher);
+        return new Sitecore.Support.EmailCampaign.Cm.Pipelines.SendEmail.HtmlMailFiller(ecmMessage, args, _logger, _cipher);
       }
 
       var message = args.EcmMessage as MailMessageItem;

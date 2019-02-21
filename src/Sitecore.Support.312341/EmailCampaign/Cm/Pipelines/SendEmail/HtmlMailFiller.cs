@@ -29,6 +29,7 @@ namespace Sitecore.Support.EmailCampaign.Cm.Pipelines.SendEmail
       Util.TraceTimeDiff("SetEmailHtmlBody(ReplaceTokens(Body))", utcNow);
       utcNow = DateTime.UtcNow;
       Email.PlainTextBody = _htmlMailBase.ReplaceTokens(_htmlMailBase.AlternateText);
+      Email.PlainTextBody = AlternativeTextLinksHelper.ReplaceAllLinkTokens(_htmlMailBase, _htmlMailBase.AlternateText, false);
       Util.TraceTimeDiff("SetEmailAltBody(ReplaceTokens(AlternateText))", utcNow);
     }
   }
